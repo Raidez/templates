@@ -9,6 +9,7 @@
   "browserslist": [
     "> 5%"
   ],
+  "homepage": "https://github.com/Raidez/templates",
   "author": "Raidez",
   "license": "ISC",
   "devDependencies": {

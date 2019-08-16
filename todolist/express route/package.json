@@ -6,6 +6,7 @@
   "scripts": {
     "run": "node %npm_package_main%"
   },
+  "homepage": "https://github.com/Raidez/templates",
   "author": "Raidez",
   "license": "ISC",
   "dependencies": {
