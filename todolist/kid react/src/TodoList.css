@@ -1,0 +1,12 @@
+button {
+	visibility: hidden;
+	color: red;
+	border: none;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+li:hover button {
+	visibility: visible;
+	cursor: pointer;
+}

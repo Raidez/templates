@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Todolist</title>
+	<script src="./bower_components/vue/dist/vue.min.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+	<div id="todolist">
+		<ul>
+			<li v-for="task, id in tasks">
+				{{ task }}
+				<button class="btn-del" v-on:click="delTask(id)">&times;</button>
+			</li>
+		</ul>
+
+		<form v-on:submit="addTask">
+			<input type="text" name="task" placeholder="Other task..." autofocus />
+			<input type="submit" value="Add task" />
+		</form>
+	</div>
+	<script src="./main.js"></script>
+</body>
+</html>

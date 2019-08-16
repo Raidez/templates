@@ -1,0 +1,19 @@
+{
+  "name": "todolist",
+  "authors": [
+    "Raidez"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
+}
