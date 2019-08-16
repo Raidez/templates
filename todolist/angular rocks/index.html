@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Todolist</title>
+	<script src="./bower_components/angular/angular.min.js"></script>
+	<script src="./main.js"></script>
+	<link rel="stylesheet" href="./style.css" />
+</head>
+<body ng-app="app">
+	<div ng-controller="todolist">
+		<ul>
+			<li ng-repeat="task in tasks">
+				{{ task }}
+				<button class="btn-del" ng-click="delTask($index)">&times;</button>
+			</li>
+		</ul>
+
+		<form ng-submit="addTask($event)">
+			<input type="text" name="task" placeholder="Other task..." autofocus />
+			<input type="submit" value="Add task" />
+		</form>
+	</div>
+</body>
+</html>

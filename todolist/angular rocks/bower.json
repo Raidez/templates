@@ -1,0 +1,20 @@
+{
+  "name": "todolist",
+  "homepage": "https://github.com/Raidez/templates",
+  "authors": [
+    "Raidez"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.7.8"
+  }
+}
