@@ -6,7 +6,9 @@
   "scripts": {
     "run": "parcel %npm_package_main%"
   },
-  "browserslist": [ "> 5%" ],
+  "browserslist": [
+    "> 5%"
+  ],
   "author": "Raidez",
   "license": "ISC",
   "devDependencies": {
