@@ -1,6 +1,9 @@
+e2e/
 .cache/
+__pycache__/
 dist/
 node_modules/
 bower_components/
 package-lock.json
+.vscode/
 *.code-workspace
