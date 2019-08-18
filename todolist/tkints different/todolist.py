@@ -1,10 +1,8 @@
 from tkinter import *
 
-text_font = ("Times New Roman", 16)
-
 class TodoList(Frame):
-	def __init__(self, master, tasks=[], **kwargs):
-		Frame.__init__(self, master, kwargs)
+	def __init__(self, master, tasks=[]):
+		Frame.__init__(self, master)
 		self.tasks = tasks
 		self.event_add('<<AddTask>>', '<Button-1>', '<Return>')
 		self.event_add('<<DelTask>>', '<Button-1>')
@@ -25,41 +23,39 @@ class TodoList(Frame):
 		
 		# génération de la liste des tâches
 		for index, task in enumerate(self.tasks):
-			TodoItem(self, index, f"• {task}").pack(side=TOP, fill=X, expand=1)
+			TodoItem(self, index, f"• {task}").pack(side=TOP, fill=X, padx=5)
 		
 		# génération du formulaire
 		taskname = StringVar()
-		task_form = Entry(self, textvariable=taskname)
-		task_form.pack(side=LEFT)
+		task_form = Entry(self, textvariable=taskname, font=("Times New Roman", 16))
+		task_form.pack(side=LEFT, padx=5, pady=5)
 		task_form.bind('<<AddTask>>', lambda e: self.add_task(taskname.get()))
 
-		button = Button(self, text="Add task")
-		button.pack(side=LEFT)
+		button = Button(self, text="Add task", font=("Times New Roman", 13))
+		button.pack(side=LEFT, padx=5, pady=5)
 		button.bind('<<AddTask>>', lambda e: self.add_task(taskname.get()))
 
 class TodoItem(Frame):
-	def __init__(self, master, index, label, **kwargs):
-		Frame.__init__(self, master, kwargs)
+	def __init__(self, master, index, label):
+		Frame.__init__(self, master)
 
 		# texte à puce
-		default_style_label = {
+		self.label = Label(self, {
 			'text': label,
 			'anchor': W,
-			'font': text_font
-		}
-		self.label = Label(self, {**default_style_label, **kwargs})
+			'font': ("Times New Roman", 16)
+		})
 		self.label.pack(side=LEFT)
 
 		# button de suppresion
-		default_style_button = {
+		self.button = Button(self, {
 			'text': "×",
 			'foreground': "Red",
 			'anchor': W,
-			'font': text_font + ("bold", ),
+			'font': ("Times New Roman", 13, "bold"),
 			'borderwidth': 0,
 			'cursor': "hand2"
-		}
-		self.button = Button(self, {**default_style_button, **kwargs})
+		})
 		self.button.pack(side=LEFT)
 
 		# gestion de l'apparition du bouton
