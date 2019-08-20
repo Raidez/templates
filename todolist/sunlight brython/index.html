@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Todolist</title>
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./brython.js"></script>
+	<script src="./brython_stdlib.js"></script>
+	<script type="text/python" src="./main.py"></script>
+</head>
+<body onload="brython()">
+	<div id="todolist">
+		<h1>Todolist</h1>
+
+		<ul>
+			<li b-code="for index, task in enumerate(tasks)">
+				{task}
+				<button class="btn-del" b-on="click:delTask" value="{index}">&times</button>
+			</li>
+		</ul>
+
+		<form b-on="submit:addTask">
+			<input type="text" name="task" placeholder="Other task..." autofocus />
+			<input type="submit" value="Add task" />
+		</form>
+	</div>
+</body>
+</html>
