@@ -1,0 +1,12 @@
+.btn-del {
+	visibility: hidden;
+	color: red;
+	border: none;
+	background-color: transparent;
+	font-weight: bold;
+}
+
+li:hover .btn-del {
+	visibility: visible;
+	cursor: pointer;
+}
